@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 14:56:09 by hmorales          #+#    #+#             */
-/*   Updated: 2022/01/24 19:33:15 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/03/17 15:36:40 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,6 @@ void	ft_lstclear_bonus(t_list **lst, void (*del)(void *));
 void	ft_lstiter_bonus(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap_bonus(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*get_next_line(int fd);
-void	*ft_realloc(void *ptr, size_t ex, size_t size);
+void	*ft_realloc(void *ptr, size_t size);
 
 #endif

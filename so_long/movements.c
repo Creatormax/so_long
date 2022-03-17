@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 13:52:36 by hmorales          #+#    #+#             */
-/*   Updated: 2022/03/03 16:29:44 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/03/17 15:28:06 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,14 @@ void	right(t_win **win)
 	write(1, "Y: ", 3);
 	ft_putnbr_fd((*win)->player_y, 1);
 	write(1, "\n", 1);
+}
+
+void	ft_free_matrix(char **str)
+{
+	int	j;
+
+	j = 0;
+	while (str[j])
+		free(str[j++]);
+	free(str);
 }

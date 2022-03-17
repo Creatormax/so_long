@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 19:41:18 by hmorales          #+#    #+#             */
-/*   Updated: 2022/03/03 18:49:14 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/03/17 15:34:13 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	key_hook(int keycode, void *win)
 	if (keycode == 53)
 	{
 		mlx_destroy_window(lol->mlx, lol->mlx_win);
-		destroy(&lol);
+		ft_free_matrix(lol->matrix);
 		exit (0);
 	}
 	if (keycode == 13 || keycode == 126)

@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:28:35 by hmorales          #+#    #+#             */
-/*   Updated: 2022/03/03 18:54:33 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/03/17 15:25:03 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct win
 }	t_win;
 
 int		main(int argc, char **argv);
-char	**map_arranger(int map);
+void	map_arranger(int map, t_win *win);
 void	map_render(int map);
 int		dimensions_x(char *aux, int j);
 int		dimensions_y(char **matrix);
@@ -54,5 +54,6 @@ int		terminator(int keycode, void *win);
 int		collider(t_win ***win, int ny, int nx);
 void	coin_counter(t_win *win);
 void	destroy(t_win **win);
+void	ft_free_matrix(char **str);
 
 #endif

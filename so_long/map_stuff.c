@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:27:07 by hmorales          #+#    #+#             */
-/*   Updated: 2022/03/03 18:18:09 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/03/17 15:49:24 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	dimensions_x(char *aux, int j)
 	i = 0;
 	if (!aux)
 		return (j);
-	while (aux[i])
+	while (aux[i] != '\n' && aux[i] != '\0')
 		i++;
 	return (i);
 }
@@ -78,35 +78,32 @@ void	map_checker(char **matrix, int i, int j)
 			error_msgr("This map has some holes in the walls");
 		k++;
 	}
-	matrix_printer(j, matrix);
 	map_checker2(matrix, i, j - 1);
 }
 
-char	**map_arranger(int map)
+void	map_arranger(int map, t_win *win)
 {
-	char	**matrix;
 	char	*aux;
 	int		i;
 	int		j;
 
 	j = 0;
-	aux = gnl_no_lb(map);
+	aux = get_next_line(map);
 	i = dimensions_x(aux, 0);
 	if (i < 3)
 		error_msgr("The map is smaller than a 3x3");
 	if (aux[0] != '1')
 		error_msgr("The map is not surrounded by walls");
-	matrix = ft_calloc(1, sizeof(char *) * i);
-	matrix[j++] = aux;
+	win->matrix = ft_calloc(1, sizeof(char *) * i);
+	win->matrix[j++] = aux;
 	while (aux)
 	{
-		aux = gnl_no_lb(map);
+		aux = get_next_line(map);
 		if (dimensions_x(aux, i) != i)
 			error_msgr("This map is not a rectangle");
-		matrix = (char **) ft_realloc(matrix, sizeof(char *) * i * j + 1, \
-		sizeof(char *) * i * j);
-		matrix[j++] = aux;
+		win->matrix = (char **) ft_realloc(win->matrix, sizeof(char *) * i * j);
+		win->matrix[j++] = aux;
 	}
-	map_checker(matrix, i, j - 1);
-	return (matrix);
+	matrix_printer(dimensions_y(win->matrix), win->matrix);
+	map_checker(win->matrix, i, j - 1);
 }
