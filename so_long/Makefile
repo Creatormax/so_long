@@ -6,7 +6,7 @@
 #    By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/15 16:09:33 by hmorales          #+#    #+#              #
-#    Updated: 2022/03/17 15:03:59 by hmorales         ###   ########.fr        #
+#    Updated: 2022/03/17 18:12:27 by hmorales         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME	=	so_long
 
 SRCS	=	so_long.c \
 			map_render.c \
+			map_render2.c \
 			map_stuff.c \
 			matrix_stuff.c \
 			character.c \
@@ -35,7 +36,7 @@ all: $(NAME)
 	$(CC) $(FLAGS) -Imlx -c $< -o $@
 
 $(NAME): $(OBJS) $(INCL) $(MLX) $(LIBFT)
-	$(CC) $(FLAGS) $(SRCS) -Iincludes $(LIBFT) -Lmlx -lmlx -Imlx -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(FLAGS) $(SRCS) -Iincludes $(LIBFT) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 $(LIBFT):
 	@make -C ./libft/

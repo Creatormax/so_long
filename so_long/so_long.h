@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:28:35 by hmorales          #+#    #+#             */
-/*   Updated: 2022/03/17 15:25:03 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/03/17 18:29:50 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,11 @@ typedef struct win
 	int		player_y;
 	int		coins;
 	int		t_coins;
-	void	*grass;
-	void	*kirby;
-	void	*tree;
-	void	*metatomato;
-	void	*exit;
+	int		i_heigh;
+	int		i_width;
+	void	*img;
 	char	**matrix;
+	int		movements;
 }	t_win;
 
 int		main(int argc, char **argv);
@@ -45,15 +44,18 @@ int		dimensions_x(char *aux, int j);
 int		dimensions_y(char **matrix);
 char	*gnl_no_lb(int map);
 void	matrix_printer(int j, char **matrix);
-void	up(t_win **win);
-void	down(t_win **win);
-void	left(t_win **win);
-void	right(t_win **win);
+void	up(t_win *win);
+void	down(t_win *win);
+void	left(t_win *win);
+void	right(t_win *win);
 int		key_hook(int keycode, void *win);
 int		terminator(int keycode, void *win);
-int		collider(t_win ***win, int ny, int nx);
+int		collider(t_win *win, int ny, int nx);
 void	coin_counter(t_win *win);
-void	destroy(t_win **win);
 void	ft_free_matrix(char **str);
+void	painter(t_win *win);
+void	painter2(t_win *win);
+void	curator(t_win *win);
+void	curator2(t_win *win);
 
 #endif

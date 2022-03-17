@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 19:41:18 by hmorales          #+#    #+#             */
-/*   Updated: 2022/03/17 15:34:13 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/03/17 16:43:34 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,24 +42,24 @@ void	coin_counter(t_win *win)
 	ft_putnbr_fd(win->t_coins, 1);
 }
 
-int	collider(t_win ***win, int nx, int ny)
+int	collider(t_win *win, int nx, int ny)
 {
-	if ((**win)->matrix[ny][nx] == '1')
+	if (win->matrix[ny][nx] == '1')
 		return (0);
-	else if ((**win)->matrix[ny][nx] == 'C')
+	else if (win->matrix[ny][nx] == 'C')
 	{
-		(**win)->matrix[ny][nx] = '0';
-		(**win)->coins++;
+		win->matrix[ny][nx] = '0';
+		win->coins++;
 	}
-	else if ((**win)->matrix[ny][nx] == 'E' && (**win)->t_coins > \
-	(**win)->coins)
+	else if (win->matrix[ny][nx] == 'E' && win->t_coins > \
+	win->coins)
 		return (0);
-	else if ((**win)->matrix[ny][nx] == 'E' && (**win)->t_coins <= \
-	(**win)->coins)
+	else if (win->matrix[ny][nx] == 'E' && win->t_coins <= \
+	win->coins)
 	{
 		write(1, "YOU WIN", 7);
 		write(1, "\n", 1);
-		terminator(0, *win);
+		terminator(0, win);
 	}
 	return (1);
 }
@@ -76,22 +76,12 @@ int	key_hook(int keycode, void *win)
 		exit (0);
 	}
 	if (keycode == 13 || keycode == 126)
-		up(&lol);
+		up(lol);
 	if (keycode == 1 || keycode == 125)
-		down(&lol);
+		down(lol);
 	if (keycode == 0 || keycode == 123)
-		left(&lol);
+		left(lol);
 	if (keycode == 2 || keycode == 124)
-		right(&lol);
+		right(lol);
 	return (0);
-}
-
-void	destroy(t_win **win)
-{
-	int	j;
-
-	j = 0;
-	while ((*win)->matrix[j])
-		free((*win)->matrix[j++]);
-	free((*win)->matrix);
 }
