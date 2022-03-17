@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 19:41:18 by hmorales          #+#    #+#             */
-/*   Updated: 2022/03/17 16:43:34 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/03/17 19:22:15 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	coin_counter(t_win *win)
 		i = 0;
 		j++;
 	}
-	ft_putnbr_fd(win->t_coins, 1);
 }
 
 int	collider(t_win *win, int nx, int ny)

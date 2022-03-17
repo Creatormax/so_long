@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:21:19 by hmorales          #+#    #+#             */
-/*   Updated: 2022/01/21 17:17:02 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/03/17 19:40:41 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,20 @@ char	*gnl_no_lb(int map)
 void	matrix_printer(int j, char **matrix)
 {
 	int	y;
+	int	x;
 
 	y = 0;
-	printf("%d\n", dimensions_y(matrix));
-	while (y <= j)
+	x = 0;
+	write(1, "\n", 1);
+	while (y < j)
 	{
-		printf("%d ", dimensions_x(matrix[y], 0));
-		printf("%s\n", matrix[y++]);
+		while (x < dimensions_x(matrix[y], x))
+		{
+			write(1, &matrix[y][x], 1);
+			x++;
+		}
+		write(1, "\n", 1);
+		x = 0;
+		y++;
 	}
 }

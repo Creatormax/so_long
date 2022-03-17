@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:28:35 by hmorales          #+#    #+#             */
-/*   Updated: 2022/03/17 18:29:50 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/03/17 21:41:24 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,10 @@ int		terminator(int keycode, void *win);
 int		collider(t_win *win, int ny, int nx);
 void	coin_counter(t_win *win);
 void	ft_free_matrix(char **str);
-void	painter(t_win *win);
-void	painter2(t_win *win);
-void	curator(t_win *win);
-void	curator2(t_win *win);
+void	paint_grass(t_win *win, int x, int y);
+void	paint_kirby(t_win *win, int x, int y);
+void	paint_exit(t_win *win, int x, int y);
+void	paint_metatomato(t_win *win, int x, int y);
+void	paint_trees(t_win *win, int x, int y);
 
 #endif
