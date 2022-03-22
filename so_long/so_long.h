@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:28:35 by hmorales          #+#    #+#             */
-/*   Updated: 2022/03/22 11:41:29 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/03/22 16:13:41 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int		dimensions_x(char *aux, int j);
 int		dimensions_y(char **matrix);
 char	*gnl_no_lb(int map);
 void	matrix_printer(int j, char **matrix);
+void	error_msgr(char *str);
 void	up(t_win *win);
 void	down(t_win *win);
 void	left(t_win *win);

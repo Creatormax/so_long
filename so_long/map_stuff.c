@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:27:07 by hmorales          #+#    #+#             */
-/*   Updated: 2022/03/17 21:09:44 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/03/22 12:34:53 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ void	map_checker2(char **matrix, int i, int j)
 	positions[0] = -1;
 	positions[1] = -1;
 	ft_bzero(err, 3);
-	while (++positions[0] < j - 1)
+	while (++positions[0] < j)
 	{
-		while (++positions[1] < i - 1)
+		while (++positions[1] < i)
 		{
 			if (matrix[positions[0]][positions[1]] == 'E')
 				err[0] = 1;

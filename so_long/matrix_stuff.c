@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:21:19 by hmorales          #+#    #+#             */
-/*   Updated: 2022/03/17 19:40:41 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/03/22 16:33:11 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,5 @@ void	matrix_printer(int j, char **matrix)
 		x = 0;
 		y++;
 	}
+	printf("X: %d, Y: %d\n", dimensions_x(matrix[0], 0), y);
 }

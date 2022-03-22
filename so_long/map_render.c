@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 14:35:05 by hmorales          #+#    #+#             */
-/*   Updated: 2022/03/22 12:00:21 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/03/22 16:37:42 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,17 @@ void	map_render(int map)
 {
 	t_win	win;
 
+	if (!map || map < 0 || map > 256)
+	{
+		write(1, "Map: Map does not exist", 24);
+		exit (0);
+	}
 	map_arranger(map, &win);
+	if (ft_strlen(win.matrix[0]) > 81 || dimensions_y(win.matrix) > 41)
+	{
+		write(1, "Where are you going??? That's bigger than the screen!!!", 56);
+		exit (0);
+	}
 	coin_counter(&win);
 	img_loader(&win);
 	win.mlx = mlx_init();
