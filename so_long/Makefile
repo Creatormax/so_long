@@ -6,7 +6,7 @@
 #    By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/15 16:09:33 by hmorales          #+#    #+#              #
-#    Updated: 2022/03/17 21:09:42 by hmorales         ###   ########.fr        #
+#    Updated: 2022/03/22 11:39:30 by hmorales         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ all: $(NAME)
 	$(CC) $(FLAGS) -Imlx -c $< -o $@
 
 $(NAME): $(OBJS) $(INCL) $(MLX) $(LIBFT)
-	$(CC) $(FLAGS) $(SRCS) -Iincludes $(LIBFT) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(FLAGS) $(SRCS) -Iincludes $(LIBFT) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 $(LIBFT):
 	@make -C ./libft/

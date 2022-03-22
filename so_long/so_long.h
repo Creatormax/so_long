@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:28:35 by hmorales          #+#    #+#             */
-/*   Updated: 2022/03/17 21:41:24 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/03/22 11:41:29 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ typedef struct win
 	int		t_coins;
 	int		i_heigh;
 	int		i_width;
-	void	*img;
+	void	*grass;
+	void	*tree;
+	void	*metatomato;
+	void	*exit;
+	void	*kirby;
 	char	**matrix;
 	int		movements;
 }	t_win;
@@ -57,6 +61,6 @@ void	paint_grass(t_win *win, int x, int y);
 void	paint_kirby(t_win *win, int x, int y);
 void	paint_exit(t_win *win, int x, int y);
 void	paint_metatomato(t_win *win, int x, int y);
-void	paint_trees(t_win *win, int x, int y);
+void	paint_tree(t_win *win, int x, int y);
 
 #endif
