@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 14:35:05 by hmorales          #+#    #+#             */
-/*   Updated: 2022/03/22 11:41:33 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/03/22 12:00:21 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,10 @@ void	map_render(int map)
 
 	map_arranger(map, &win);
 	coin_counter(&win);
+	img_loader(&win);
 	win.mlx = mlx_init();
 	win.mlx_win = mlx_new_window(win.mlx, dimensions_x(win.matrix[0], 0) * 32 \
 	, dimensions_y(win.matrix) * 32, "so_long");
-	img_loader(&win);
 	painter(&win);
 	mlx_hook(win.mlx_win, 17, 0L, terminator, &win);
 	mlx_hook(win.mlx_win, 2, 1L << 0, key_hook, &win);
