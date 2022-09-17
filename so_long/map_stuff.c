@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:27:07 by hmorales          #+#    #+#             */
-/*   Updated: 2022/03/22 12:34:53 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/09/17 20:14:12 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,28 +36,27 @@ void	map_checker2(char **matrix, int i, int j)
 	int	positions[2];
 	int	err[3];
 
-	positions[0] = -1;
-	positions[1] = -1;
-	ft_bzero(err, 3);
+	ft_memset(positions, -1, 2 * sizeof(int));
+	ft_bzero(err, 3 * sizeof(int));
 	while (++positions[0] < j)
 	{
 		while (++positions[1] < i)
 		{
 			if (matrix[positions[0]][positions[1]] == 'E')
-				err[0] = 1;
+				err[0]++;
 			if (matrix[positions[0]][positions[1]] == 'C')
-				err[1] = 1;
+				err[1]++;
 			if (matrix[positions[0]][positions[1]] == 'P')
-				err[2] = 1;
+				err[2]++;
 		}
 		positions[1] = 0;
 	}
-	if (err[0] == 0)
-		error_msgr("There is no exit");
+	if (err[0] != 1)
+		error_msgr("Error parsing exits");
 	else if (err[1] == 0)
-		error_msgr("There are no collectables");
-	else if (err[2] == 0)
-		error_msgr("There is no starting point");
+		error_msgr("Error parsing collectables");
+	else if (err[2] != 1)
+		error_msgr("Error parsing starting points");
 }
 
 void	map_checker(char **matrix, int i, int j)
