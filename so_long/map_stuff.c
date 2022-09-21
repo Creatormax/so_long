@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:27:07 by hmorales          #+#    #+#             */
-/*   Updated: 2022/09/21 10:41:08 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/09/21 12:15:47 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,9 @@ void	map_checker(char **matrix, int i, int j)
 	{
 		if (matrix[0][k] != '1' || matrix[j - 1][k] != '1')
 			error_msgr("This map has some holes in the walls");
+		if (matrix[k][0] != '1' || matrix[k][0] != '0' || \
+		matrix[k][0] != 'C' || matrix[k][0] != 'P' || matrix[k][0] != '1')
+			error_msgr("This map has invalid characters");
 		k++;
 	}
 	k = 0;
@@ -75,6 +78,9 @@ void	map_checker(char **matrix, int i, int j)
 	{
 		if (matrix[k][0] != '1' || matrix[k][i - 1] != '1')
 			error_msgr("This map has some holes in the walls");
+		if (matrix[k][0] != '1' || matrix[k][0] != '0' || \
+		matrix[k][0] != 'C' || matrix[k][0] != 'P' || matrix[k][0] != '1')
+			error_msgr("This map has invalid characters");
 		k++;
 	}
 	map_checker2(matrix, i, j - 1);
