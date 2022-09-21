@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:27:07 by hmorales          #+#    #+#             */
-/*   Updated: 2022/09/17 20:14:12 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/09/21 10:41:08 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,8 @@ void	map_arranger(int map, t_win *win)
 		win->matrix = (char **) ft_realloc(win->matrix, sizeof(char *) * i * j);
 		win->matrix[j++] = aux;
 	}
+	map_checker(win->matrix, i, j - 1);
 	write(1, "MAP LOADED:", 11);
 	matrix_printer(dimensions_y(win->matrix), win->matrix);
 	write(1, "GAME START\n", 11);
-	map_checker(win->matrix, i, j - 1);
 }

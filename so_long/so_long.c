@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:28:38 by hmorales          #+#    #+#             */
-/*   Updated: 2022/03/22 16:16:16 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/09/21 10:58:01 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	else
-		write(1, "Only .ber files are accepted", 29);
+		write(1, "Only .ber files are accepted", 28);
 	return (0);
 }
