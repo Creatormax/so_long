@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:21:19 by hmorales          #+#    #+#             */
-/*   Updated: 2022/09/28 10:17:07 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/09/28 11:35:08 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ void	parse_check(char **matrix, int i, int j)
 
 	y = 0;
 	x = 0;
-	while (y < j - 2)
+	while (y < j)
 	{
-		while (x < i - 2)
+		while (x < i)
 		{
 			if (matrix[y][x] != '1' && matrix[y][x] != 'C' && \
 			matrix[y][x] != 'P' && matrix[y][x] != '0' && matrix[y][x] != 'E')
