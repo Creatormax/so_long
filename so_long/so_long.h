@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:28:35 by hmorales          #+#    #+#             */
-/*   Updated: 2022/03/22 16:13:41 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/09/28 10:03:05 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ void	paint_kirby(t_win *win, int x, int y);
 void	paint_exit(t_win *win, int x, int y);
 void	paint_metatomato(t_win *win, int x, int y);
 void	paint_tree(t_win *win, int x, int y);
+void	parse_check(char **matrix, int i, int j);
 
 #endif

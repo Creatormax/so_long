@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:21:19 by hmorales          #+#    #+#             */
-/*   Updated: 2022/03/22 16:33:11 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/09/28 10:17:07 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,27 @@ char	*gnl_no_lb(int map)
 		return (NULL);
 	aux2 = ft_strtrim(aux, "\n");
 	return (aux2);
+}
+
+void	parse_check(char **matrix, int i, int j)
+{
+	int	y;
+	int	x;
+
+	y = 0;
+	x = 0;
+	while (y < j - 2)
+	{
+		while (x < i - 2)
+		{
+			if (matrix[y][x] != '1' && matrix[y][x] != 'C' && \
+			matrix[y][x] != 'P' && matrix[y][x] != '0' && matrix[y][x] != 'E')
+				error_msgr("There are invalid characters in this map");
+			x++;
+		}
+		x = 0;
+		y++;
+	}
 }
 
 void	matrix_printer(int j, char **matrix)
