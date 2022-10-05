@@ -6,7 +6,7 @@
 #    By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/15 16:09:33 by hmorales          #+#    #+#              #
-#    Updated: 2022/03/22 12:54:16 by hmorales         ###   ########.fr        #
+#    Updated: 2022/10/05 10:25:29 by hmorales         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRCS	=	so_long.c \
 			matrix_stuff.c \
 			character.c \
 			movements.c \
+			img_loader.c \
 
 FLAGS	=	-Wall -Wextra -Werror
 
@@ -35,7 +36,7 @@ all: $(NAME)
 %.o: %.c
 	$(CC) $(FLAGS) -Imlx -c $< -o $@
 
-$(NAME): $(OBJS) $(INCL) $(MLX) $(LIBFT)
+$(NAME): $(OBJS) $(INCL) $(LIBFT)
 	$(CC) $(FLAGS) $(SRCS) -Iincludes $(LIBFT) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 $(LIBFT):
@@ -48,7 +49,6 @@ clean:
 	@rm -rf $(OBJS)
 	@echo "cleaning .o files"	
 	@make fclean -C ./libft/
-	@make clean -C ./mlx/
 
 fclean: clean
 	@rm -rf $(NAME)

@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:28:35 by hmorales          #+#    #+#             */
-/*   Updated: 2022/09/28 10:03:05 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/10/05 12:23:59 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,17 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include "mlx/mlx.h"
+# include <mlx.h>
 # include "libft/libft.h"
+
+typedef struct img
+{
+	void	*kirby;
+	void	*grass;
+	void	*metatomato;
+	void	*tree;
+	void	*exit;
+}	t_img;
 
 typedef struct win
 {
@@ -32,11 +41,7 @@ typedef struct win
 	int		t_coins;
 	int		i_heigh;
 	int		i_width;
-	void	*grass;
-	void	*tree;
-	void	*metatomato;
-	void	*exit;
-	void	*kirby;
+	t_img	image;
 	char	**matrix;
 	int		movements;
 }	t_win;
@@ -58,11 +63,13 @@ int		terminator(int keycode, void *win);
 int		collider(t_win *win, int ny, int nx);
 void	coin_counter(t_win *win);
 void	ft_free_matrix(char **str);
-void	paint_grass(t_win *win, int x, int y);
-void	paint_kirby(t_win *win, int x, int y);
-void	paint_exit(t_win *win, int x, int y);
-void	paint_metatomato(t_win *win, int x, int y);
-void	paint_tree(t_win *win, int x, int y);
 void	parse_check(char **matrix, int i, int j);
+void	print_exit(t_win *win);
+void	print_kirby(t_win *win);
+void	print_metatomato(t_win *win);
+void	print_grass(t_win *win, int x, int y);
+void	print_tree(t_win *win);
+void	painter(t_win *win);
+void	curator(t_win *win);
 
 #endif
