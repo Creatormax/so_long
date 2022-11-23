@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 19:41:18 by hmorales          #+#    #+#             */
-/*   Updated: 2022/03/17 19:22:15 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/11/09 12:11:08 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,24 +63,21 @@ int	collider(t_win *win, int nx, int ny)
 	return (1);
 }
 
-int	key_hook(int keycode, void *win)
+int	key_hook(int keycode, t_win *win)
 {
-	t_win	*lol;
-
-	lol = (t_win *)win;
 	if (keycode == 53)
 	{
-		mlx_destroy_window(lol->mlx, lol->mlx_win);
-		ft_free_matrix(lol->matrix);
+		mlx_destroy_window(win->mlx, win->mlx_win);
+		ft_free_matrix(win->matrix);
 		exit (0);
 	}
 	if (keycode == 13 || keycode == 126)
-		up(lol);
+		up(win);
 	if (keycode == 1 || keycode == 125)
-		down(lol);
+		down(win);
 	if (keycode == 0 || keycode == 123)
-		left(lol);
+		left(win);
 	if (keycode == 2 || keycode == 124)
-		right(lol);
+		right(win);
 	return (0);
 }

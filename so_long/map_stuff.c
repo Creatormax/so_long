@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:27:07 by hmorales          #+#    #+#             */
-/*   Updated: 2022/10/05 12:58:44 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/11/23 13:08:44 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void	map_arranger(int map, t_win *win)
 		aux = get_next_line(map);
 		if (dimensions_x(aux, i) != i)
 			error_msgr("This map is not a rectangle");
-		win->matrix = (char **) ft_realloc(win->matrix, sizeof(char *) * i * j);
+		win->matrix = (char **) ft_realloc(win->matrix, sizeof(char *) * i * j + 1);
 		win->matrix[j++] = aux;
 	}
 	map_checker(win->matrix, i, j - 1);

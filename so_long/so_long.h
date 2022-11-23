@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:28:35 by hmorales          #+#    #+#             */
-/*   Updated: 2022/10/05 12:23:59 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/11/23 15:04:05 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,30 +20,32 @@
 # include <mlx.h>
 # include "libft/libft.h"
 
-typedef struct img
+typedef struct s_sprites
 {
 	void	*kirby;
-	void	*grass;
-	void	*metatomato;
+	void	*meta;
 	void	*tree;
+	void	*grass;
 	void	*exit;
-}	t_img;
+}	t_sprites;
 
-typedef struct win
+typedef struct s_win
 {
-	void	*mlx;
-	void	*mlx_win;
-	int		x;
-	int		y;
-	int		player_x;
-	int		player_y;
-	int		coins;
-	int		t_coins;
-	int		i_heigh;
-	int		i_width;
-	t_img	image;
-	char	**matrix;
-	int		movements;
+	void		*mlx;
+	void		*mlx_win;
+	int			x;
+	int			y;
+	int			dimension_x;
+	int			dimension_y;
+	int			player_x;
+	int			player_y;
+	int			coins;
+	int			t_coins;
+	int			i_heigh;
+	int			i_width;
+	char		**matrix;
+	int			movements;
+	t_sprites	sprites;
 }	t_win;
 
 int		main(int argc, char **argv);
@@ -58,7 +60,7 @@ void	up(t_win *win);
 void	down(t_win *win);
 void	left(t_win *win);
 void	right(t_win *win);
-int		key_hook(int keycode, void *win);
+int		key_hook(int keycode, t_win *win);
 int		terminator(int keycode, void *win);
 int		collider(t_win *win, int ny, int nx);
 void	coin_counter(t_win *win);
@@ -70,6 +72,6 @@ void	print_metatomato(t_win *win);
 void	print_grass(t_win *win, int x, int y);
 void	print_tree(t_win *win);
 void	painter(t_win *win);
-void	curator(t_win *win);
+int		process(t_win win);
 
 #endif
