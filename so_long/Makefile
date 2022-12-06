@@ -6,7 +6,7 @@
 #    By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/15 16:09:33 by hmorales          #+#    #+#              #
-#    Updated: 2022/11/23 15:03:55 by hmorales         ###   ########.fr        #
+#    Updated: 2022/12/06 15:59:50 by hmorales         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,10 @@ SRCS	=	so_long.c \
 			character.c \
 			movements.c \
 			img_loader.c \
+			algorithm.c \
+			algorithm2.c \
 
-FLAGS	=	-Wall -Wextra -Werror #-g3 -fsanitize=address -O3  -save-temps   
+FLAGS	=	-Wall -Wextra -Werror -g3 -fsanitize=address -O3#  -save-temps   
 
 OBJS	=	$(SRCS:.c=.o)
 

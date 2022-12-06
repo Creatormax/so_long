@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 16:21:19 by hmorales          #+#    #+#             */
-/*   Updated: 2022/09/28 11:35:08 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/12/06 14:03:17 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	parse_check(char **matrix, int i, int j)
 	}
 }
 
-void	matrix_printer(int j, char **matrix)
+void	matrix_printer(char **matrix)
 {
 	int	y;
 	int	x;
@@ -53,16 +53,16 @@ void	matrix_printer(int j, char **matrix)
 	y = 0;
 	x = 0;
 	write(1, "\n", 1);
-	while (y < j)
+	while (y < dimensions_y(matrix))
 	{
-		while (x < dimensions_x(matrix[y], x))
+		while (x < dimensions_x(matrix[0], 0))
 		{
 			write(1, &matrix[y][x], 1);
 			x++;
 		}
 		write(1, "\n", 1);
-		x = 0;
 		y++;
+		x = 0;
 	}
 	printf("X: %d, Y: %d\n", dimensions_x(matrix[0], 0), y);
 }

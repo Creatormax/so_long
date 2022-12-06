@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:28:35 by hmorales          #+#    #+#             */
-/*   Updated: 2022/11/23 15:04:05 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/12/06 15:46:00 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	map_render(int map);
 int		dimensions_x(char *aux, int j);
 int		dimensions_y(char **matrix);
 char	*gnl_no_lb(int map);
-void	matrix_printer(int j, char **matrix);
+void	matrix_printer(char **matrix);
 void	error_msgr(char *str);
 void	up(t_win *win);
 void	down(t_win *win);
@@ -73,5 +73,6 @@ void	print_grass(t_win *win, int x, int y);
 void	print_tree(t_win *win);
 void	painter(t_win *win);
 int		process(t_win win);
+char	**matrix_zero(char **aux, t_win win);
 
 #endif

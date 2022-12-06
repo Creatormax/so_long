@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:27:07 by hmorales          #+#    #+#             */
-/*   Updated: 2022/11/23 13:08:44 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/12/06 14:03:30 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,6 @@ void	map_arranger(int map, t_win *win)
 	}
 	map_checker(win->matrix, i, j - 1);
 	write(1, "MAP LOADED:", 11);
-	matrix_printer(dimensions_y(win->matrix), win->matrix);
+	matrix_printer(win->matrix);
 	write(1, "GAME START\n", 11);
 }
