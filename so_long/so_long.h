@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:28:35 by hmorales          #+#    #+#             */
-/*   Updated: 2022/12/06 15:46:00 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/12/14 12:13:37 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void	print_grass(t_win *win, int x, int y);
 void	print_tree(t_win *win);
 void	painter(t_win *win);
 int		process(t_win win);
-char	**matrix_zero(char **aux, t_win win);
+void	console_esthetics(t_win win);
+char **matrix_zero(int i, int j, t_win win, char** aux);
 
 #endif

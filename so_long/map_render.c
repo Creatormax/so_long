@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 14:35:05 by hmorales          #+#    #+#             */
-/*   Updated: 2022/11/23 15:48:08 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/12/14 12:20:27 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,7 @@ void	map_render(int map)
 		error_msgr("Where are you going??? That's bigger than the screen!!!");
 	i = process(win);
 	if (i != 0)
-	{
-		printf("\n%d\n", i);
 		error_msgr("There is no valid path");
-	}
 	coin_counter(&win);
 	win.mlx = mlx_init();
 	win.mlx_win = mlx_new_window(win.mlx, dimensions_x(win.matrix[0], 0) * 32, \

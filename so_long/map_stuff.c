@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/15 17:27:07 by hmorales          #+#    #+#             */
-/*   Updated: 2022/12/06 14:03:30 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/12/14 12:13:11 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,11 +101,10 @@ void	map_arranger(int map, t_win *win)
 		aux = get_next_line(map);
 		if (dimensions_x(aux, i) != i)
 			error_msgr("This map is not a rectangle");
-		win->matrix = (char **) ft_realloc(win->matrix, sizeof(char *) * i * j + 1);
+		win->matrix = (char **) ft_realloc(win->matrix, \
+		sizeof(char *) * i * j + 1);
 		win->matrix[j++] = aux;
 	}
 	map_checker(win->matrix, i, j - 1);
-	write(1, "MAP LOADED:", 11);
-	matrix_printer(win->matrix);
-	write(1, "GAME START\n", 11);
+	console_esthetics(*win);
 }
