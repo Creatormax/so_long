@@ -6,7 +6,7 @@
 /*   By: hmorales <hmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 17:14:56 by hmorales          #+#    #+#             */
-/*   Updated: 2022/12/14 12:11:56 by hmorales         ###   ########.fr       */
+/*   Updated: 2022/12/14 12:39:02 by hmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	console_esthetics(t_win win)
 	write(1, "GAME START\n", 11);
 }
 
-char **matrix_zero(int i, int j, t_win win, char** aux)
+char	**matrix_zero(int i, int j, t_win win, char **aux)
 {
 	if (win.matrix[i][j] == '1')
 		aux[i][j] = '1';
